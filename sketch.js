@@ -1,9 +1,11 @@
 var x = 300;
 var y = 300;
 
+
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(windowWidth, windowHeight-100);
 	background(255);
+
 }
 
 function draw() {
