@@ -1,11 +1,20 @@
 var x = 300;
 var y = 300;
-
+var nappi;
+var bgcolor;
 
 function setup() {
-	createCanvas(windowWidth, windowHeight-100);
+	createCanvas(windowWidth, windowHeight-2);
 	background(255);
+//	nappi = createButton("next");
+//  nappi.position(windowWidth-100, 20);
+//  nappi.mousePressed(changeColor);
 
+}
+function changeColor(){
+  h1.html("Dr. Snow knows everything");
+  bgcolor = color(random(255));
+  //  createP("Try me " + random(0,100) + " times!");
 }
 
 function draw() {
