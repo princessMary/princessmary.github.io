@@ -60,9 +60,9 @@ function setup() {
 }
 
 function draw() {
- if (window.selectedSketch === 'sketch1') {
-   drawSketch1();
- } else {
-      drawSketch2();
-    }
+  if (window.selectedSketch === 'sketch1') {
+    drawSketch1();
+  } else {
+    drawSketch2();
+  }
 }
