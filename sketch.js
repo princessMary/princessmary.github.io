@@ -4,7 +4,7 @@ var nappi;
 var bgcolor;
 
 function setup() {
-	createCanvas(windowWidth, windowHeight-2);
+	createCanvas(windowWidth, windowHeight-100);
 	background(255);
 //	nappi = createButton("next");
 //  nappi.position(windowWidth-100, 20);
