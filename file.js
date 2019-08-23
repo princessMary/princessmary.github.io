@@ -213,7 +213,7 @@ function setup() {
 }
 function drawSketch6() {
   //https://p5js.org/examples/motion-bounce.html
-  background(10);
+  background(mouseX/2, 100 , mouseY/2, 100);
   noStroke();
   // Update the position of the shape
   xpos = xpos + xspeed * xdirection;
