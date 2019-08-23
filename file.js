@@ -32,6 +32,8 @@ let balls = [];
 let angle = 0;
 var input;
 let yoff = 0.0;
+var i = 1;
+var ikkunoidenLKM = 11;
 // let img;
 // var unicorns = [];
 // let unicorn1;
@@ -48,6 +50,12 @@ let yoff = 0.0;
 function handleClick(sketch) {
   clear();
   window.selectedSketch = sketch;
+  if (sketch === 'next' && i<= ikkunoidenLKM) {
+    i++;
+    window.selectedSketch = i;
+  } else {
+    window.selectedSketch = 'sketch1';
+  }
 }
 window.selectedSketch = 'sketch1';
 
@@ -494,27 +502,28 @@ function draw() {
 
   if (window.selectedSketch === 'sketch1') {
     drawSketch1();
-  } else if (window.selectedSketch === 'sketch2'){
+  } else if (window.selectedSketch === 2){
     drawSketch2();
-  } else if (window.selectedSketch === 'sketch3'){
+  } else if (window.selectedSketch === 3){
     drawSketch3();
-  } else if (window.selectedSketch === 'sketch4'){
+  } else if (window.selectedSketch === 4){
     drawSketch4();
-  } else if (window.selectedSketch === 'sketch5'){
+  } else if (window.selectedSketch === 5){
     drawSketch5();
-  } else if (window.selectedSketch === 'sketch6'){
+  } else if (window.selectedSketch === 6){
     drawSketch6();
-  } else if (window.selectedSketch === 'sketch7'){
+  } else if (window.selectedSketch === 7){
     drawSketch7();
-  } else if (window.selectedSketch === 'sketch8'){
+  } else if (window.selectedSketch === 8){
     drawSketch8();
-  } else if (window.selectedSketch === 'sketch9'){
+  } else if (window.selectedSketch === 9){
     drawSketch9();
-  } else if (window.selectedSketch === 'sketch10'){
+  } else if (window.selectedSketch === 10){
     drawSketch10();
-  } else if (window.selectedSketch === 'sketch11'){
+  } else if (window.selectedSketch === 11){
     drawSketch11();
   } else {
     drawSketch12();
   }
+
 }
