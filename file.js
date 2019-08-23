@@ -1,63 +1,46 @@
-var x = 300;
-var y = 300;
-
+let x = 300;
+let y = 300;
 let num = 2000;
 let range = 6;
-
 let ax = [];
 let ay = [];
-
 let theta;
-
 let xx = [0, 0],
   yy = [0, 0],
   segLength = 50;
-
 let rad = 60; // Width of the shape
 let xpos, ypos; // Starting position of shape
-
 let xspeed = 2.8; // Speed of the shape
 let yspeed = 2.2; // Speed of the shape
-
 let xdirection = 1; // Left or Right
 let ydirection = 1; // Top to Bottom
-
-
 let numBalls = 13;
 let spring = 0.05;
 let gravity = 0.03;
 let friction = -0.9;
 let balls = [];
-
 let angle = 0;
 var input;
 let yoff = 0.0;
-var i = 1;
-var ikkunoidenLKM = 11;
-// let img;
-// var unicorns = [];
-// let unicorn1;
-// let unicorn2;
-
-// let extraCanvas;
-// let imageCanvas;
-
-// image downloaded from https://ayoqq.org
-// function preload() {
-//   img = loadImage('n5.png');
-// }
+let i = 1;
+let ikkunoidenLKM = 11;
+let sketch;
 
 function handleClick(sketch) {
   clear();
-  window.selectedSketch = sketch;
+ // window.selectedSketch = sketch;
   if (sketch === 'next' && i<= ikkunoidenLKM) {
-    i++;
+    i ++ ;
     window.selectedSketch = i;
-  } else {
-    window.selectedSketch = 'sketch1';
+  } else if (sketch === 'same'){
+    window.selectedSketch = i;
+  } 
+  else if (i> ikkunoidenLKM){
+    i = 1;
   }
+
 }
-window.selectedSketch = 'sketch1';
+window.selectedSketch = i;
 
 function drawSketch1() {
   if (mouseIsPressed) {
@@ -179,24 +162,6 @@ function segment(xx, yy, a) {
   line(0, 0, segLength, 0);
   pop();
 }
-// let bubbles = [];
-// function drawSketch5() {
-//  // background(0);
-//   if (mouseIsPressed){
-//     bubbles.push(new Bubble(mouseX, mouseY));
-//     for (var i=0; i<bubbles.length; i++) {
-//       bubbles[i].clicked();
-//     }
-//   }
-//   for (var i=0; i<bubbles.length; i++) {
-//     bubbles[i].move();
-//     bubbles[i].show();
-//   }
-  // if (bubbles.length >10){
-  //   bubbles.splice(0,1);
-  // }
-
-// }
 
 function setup() {
   createCanvas(windowWidth, windowHeight - 100);
@@ -479,6 +444,7 @@ function drawSketch11() {
   // https://p5js.org/examples/drawing-pulses.html
   noStroke();
   fill(0, 102);
+  sec = second();
   // Draw only when mouse is pressed
   if (mouseIsPressed === true) {
     angle += 5;
@@ -486,7 +452,7 @@ function drawSketch11() {
     for (let a = 0; a < 360; a += 75) {
       let xoff = cos(radians(a)) * val;
       let yoff = sin(radians(a)) * val;
-      fill(x / 2, y / 2, random(50, 255), random(0, 255));
+      fill(mouseX/4+random(1, 10)*sec , mouseY / 2, random(1, 10)*sec, random(0, 255));
       ellipse(mouseX + xoff, mouseY + yoff, val, val);
     }
     fill(255);
@@ -497,10 +463,7 @@ function drawSketch11() {
 
 function draw() {
 
-  // imageCanvas.clear();
-  // extraCanvas.clear();
-
-  if (window.selectedSketch === 'sketch1') {
+  if (window.selectedSketch === 1) {
     drawSketch1();
   } else if (window.selectedSketch === 2){
     drawSketch2();
@@ -523,7 +486,7 @@ function draw() {
   } else if (window.selectedSketch === 11){
     drawSketch11();
   } else {
-    drawSketch12();
+    drawSketch1();
   }
 
 }
